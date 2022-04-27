@@ -10,17 +10,62 @@
     color: aliceblue;
   }
   .container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #3E3A5B;
     max-width: 90vw;
+    /* height: fit-content; */
     position: relative;
     margin-top: 60px;
-    margin-left: 60px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     overflow: hidden;
   }
+  /* mobile */
+  @media (min-width: 767px) , (max-width : 894px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(2,1fr);
+        height: fit-content;
+
+    }
+}
+  /* Portrait tablets and small desktops */
+@media (min-width: 895px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        max-height: 80vh;
+    }
+}
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) {
+    .container{
+        width: 990px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 80vh;
+    }
+}
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    .container{
+        width: 1170px;
+        max-height: 80vh;
+
+    }
+}
   .left{
-      background-color: #07060E;
+    box-shadow: 20px 20px 18px 2px #25222b;
+    background-color: #07060E;
       padding: 40px;
       margin: 40px;
       border-radius: 30px;
@@ -31,6 +76,7 @@
       position: relative;
 }
   .right{
+    box-shadow: 20px 20px 18px 2px #25222b;
       background-color: #07060E;
       padding: 40px;
       margin: 40px;
@@ -51,7 +97,6 @@
     margin-bottom: 20px;
 }
 .container .left .body_left{
-    width: 100%;
     height: 350px;
     margin-top: 50px;
     padding-left: 30px;
@@ -59,7 +104,6 @@
     background-color: #25222B;
     position: relative;
     border-radius: 40px;
-    /* display: flex; */
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     -ms-border-radius: 40px;
@@ -80,8 +124,8 @@
 .container .left .body_left .icon::before{
     content: '';
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 3.75rem;
+    height: 3.75rem;
     border-radius: 40%;
     top: -20px;
     background: linear-gradient(45deg, #7dadf69c 80%, #04befe 20%);
@@ -90,12 +134,11 @@
     -ms-border-radius: 40%;
     -o-border-radius: 40%;
 }
-
 .container .left .body_left .icon::after{
     content: '';
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 40%;
     background-color: #2196f3;
     left: 20px;
@@ -116,14 +159,10 @@
     -o-border-radius: 50%;
 }
 .container .left .body_left .ttl{
-    /* display: inline-flex; */
-    /* position: relative; */
     margin-top: -60px;
     margin-left: 90px;
 }
 .container .left .body_left .price{
-    /* display: inline-flex; */
-    /* position: relative; */
     margin-top: 5px;
     margin-left: 90px;
     margin-bottom: 30px;
@@ -152,6 +191,7 @@
 }
 .btn{
     display: block;
+    cursor: pointer;
     background-color: #04befe;
     text-align: center;
     width: calc(100% - 10px);
@@ -166,6 +206,14 @@
     outline: none;
     background-image: linear-gradient( 170deg,#445fd8c2 50% ,#445fd8c2 50% , #705fcc 100%);
 }
+.btn:hover{
+    background-color: #25222b;
+    border: 1px solid #04befe;
+    color: #f3f3f3;
+    background-image: none;
+    background-image: linear-gradient(30deg , #04befe, transparent);
+
+}
 .left .load{
     position: relative;
     display: flex;
@@ -178,8 +226,7 @@
 .left .load div{
     width: 10px;
     height: 10px;
-    /*position: absolute;
-    */margin-left: 6px;
+    margin-left: 6px;
     background-color: #04befe;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -197,11 +244,8 @@
     background-color: #25222B;
     margin: 15px auto;
     padding: 18px;
-    /* display: flex; */
     font-size: 16px;
     position: relative;
-    /* align-items: flex-end; */
-    /* justify-content: flex-end; */
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -289,7 +333,6 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
-
 .container .right .head_right .icon2 div{
     position: absolute;
     width: 12px;
@@ -318,7 +361,6 @@
     display: grid;
     grid-template-rows: repeat(auto-fill , maxmin(3 , 1fr));
     gap: 15px;
-    
 }
 .container .right .body_right .bd1{
     margin-top: 40px;
@@ -376,8 +418,7 @@
 }
 .container .right .price sub,sup{
     font-size: 12px;
-    font-weight: 100;
-    
+    font-weight: 100; 
 }
 .container .right .body_right .bd2{
     margin-top: 40px;
